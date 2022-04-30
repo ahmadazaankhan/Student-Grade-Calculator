@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 1: find total ? 
+    2 : find percentage ? 
+    3:Find Grade
+    4 : check pass or fail.
+    5 :combined and show output  -->
+
+    <input type="text" id="math" placeholder="math" >
+    <input type="text" id ="urud"bplaceholder="urdu">
+    <input type="text" id="eng" placeholder="eng">
+    <input type="text" id="phy"  placeholder="phy">
+    <p id="ShowData"></p>
+        <button onclick="Cal()">Check</button>
+
+        <script>
+
+        function Cal()
+        {
+            let math = document.getElementById('math').value
+            let urud = document.getElementById('urud').value
+            let eng = document.getElementById('eng').value
+            let phy = document.getElementById('phy').value
+
+            let grades ; 
+
+          
+            let totalGrade = parseFloat(math) + parseFloat(urud) + parseFloat(eng) + parseFloat(phy)
+            alert(totalGrade) 
+            
+             let perc = (totalGrade/400)*100
+
+             if(perc <= 100 && perc >= 80)
+             {
+                grades ="A"
+             }
+
+
+            else if(perc <= 79 && perc >= 60)
+
+
+
+             {
+                grades ="B"
+             }
+
+             else if(perc <= 59 && perc >= 40)
+             {
+                grades ="C"
+             }
+
+             else{
+                 grades ='F'
+             }
+            if(perc >= 39)
+            {
+                document.getElementById('ShowData').innerHTML = `Out of 400 your total ${totalGrade} and perecentage 
+                is ${perc} % your Grade ${grades} you are pass 
+                `
+            }
+            else 
+            {
+                document.getElementById('ShowData').innerHTML = `Out of 400 your total ${totalGrade} and perecentage 
+                is ${perc} % your Grade ${grades} you are fail 
+                `
+            }
+        }
+
+
+
+        </script>
+</body>
+</html>
